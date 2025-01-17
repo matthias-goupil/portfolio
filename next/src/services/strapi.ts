@@ -41,7 +41,7 @@ export async function getWithStrapi<T extends object>(
   if (!process.env.STRAPI_API_TOKEN)
     throw new Error("STRAPI_API_TOKEN environment variable is missing");
 
-  const url = `${process.env.STRAPI_API_URL}/${resource}/${id ? id : ""}`;
+  const url = `${process.env.STRAPI_API_URL}/${resource}/${id ? id : ""}?populate=*`;
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
