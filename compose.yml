@@ -32,7 +32,7 @@ services:
       target: ${NODE_ENV:-development}
     container_name: next-portfolio
     environment:
-      - STRAPI_API_URL="http://strapi-portfolio:5432/api"
+      - STRAPI_API_URL=http://strapi-portfolio:1337/api
       - STRAPI_API_TOKEN=${STRAPI_API_TOKEN}
     ports:
       - "3000:3000"
