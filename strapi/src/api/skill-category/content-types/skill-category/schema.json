@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skill_categories",
+  "info": {
+    "singularName": "skill-category",
+    "pluralName": "skill-categories",
+    "displayName": "SkillCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill",
+      "mappedBy": "skill_category"
+    }
+  }
+}
